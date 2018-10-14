@@ -17,12 +17,12 @@ const Counter = ({clicked, onIncrement, onDecrement}) => {
 };
 
 const mapStateToProps = state => ({
-     clicked: state.counter
+    clicked: state.click.counter
 });
 
 const mapDispatchToProps = dispatch => ({
-        onIncrement: () => dispatch(doIncrement),
-        onDecrement: () => dispatch(doDecrement)
+    onIncrement: () => dispatch(doIncrement),
+    onDecrement: () => dispatch(doDecrement)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)

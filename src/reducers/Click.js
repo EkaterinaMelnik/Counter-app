@@ -1,17 +1,18 @@
-import {combineReducers} from 'redux';
+import {combineReducers} from "redux";
 
 const initialState = {
     counter: 0,
     double_counter: 1
 };
 
-const click = (state = initialState, action) => {
+function click(state = initialState, action) {
     switch (action.type) {
         case 'INCREMENT':
             return {
                 ...state,
                 counter: state.counter + 1
             };
+
         case 'DECREMENT':
             return {
                 ...state,
@@ -20,9 +21,9 @@ const click = (state = initialState, action) => {
         default:
             return state;
     }
-};
+}
 
-const doubleClick = (state = initialState, action) => {
+function doubleClick(state = initialState, action) {
     switch (action.type) {
         case 'DOUBLE_INCREMENT':
             return {
@@ -37,11 +38,6 @@ const doubleClick = (state = initialState, action) => {
         default:
             return state
     }
-};
+}
 
-const rootReducer = combineReducers({
-    click,
-    doubleClick
-});
-
-export default rootReducer
+export default combineReducers({click, doubleClick});

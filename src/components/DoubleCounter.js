@@ -1,4 +1,4 @@
-import  React from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {doDoubleIncrement, doDoubleDecrement} from "../actions/Action";
 
@@ -17,12 +17,12 @@ const DoubleCounter = ({double_clicked, onDoubleIncrement, onDoubleDecrement}) =
 };
 
 const mapStateToProps = state => ({
-    double_clicked: state.double_counter
+    double_clicked: state.doubleClick.double_counter
 });
 
 const mapDispatchToProps = dispatch => ({
-        onDoubleIncrement: () => dispatch(doDoubleIncrement),
-        onDoubleDecrement: () => dispatch(doDoubleDecrement)
+    onDoubleIncrement: () => dispatch(doDoubleIncrement),
+    onDoubleDecrement: () => dispatch(doDoubleDecrement)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DoubleCounter);
