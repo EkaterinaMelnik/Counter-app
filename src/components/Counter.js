@@ -17,7 +17,7 @@ const Counter = ({clicked, onIncrement, onDecrement}) => {
 };
 
 const mapStateToProps = state => ({
-    clicked: state.click.counter
+    clicked: state.click
 });
 
 const mapDispatchToProps = dispatch => ({

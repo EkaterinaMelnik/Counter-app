@@ -5,11 +5,8 @@ import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import App from "./App";
-import rootReducer  from './reducers/Click';
-// import DoubleCLickReducer  from './reducers/DoubleClick';
-// import { combineReducers } from 'redux';
+import rootReducer from './reducers';
 
-// const rootReducer = combineReducers({ClickReducer, DoubleCLickReducer});
 const store = createStore(rootReducer);
 
 ReactDOM.render(

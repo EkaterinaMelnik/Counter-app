@@ -1,12 +1,10 @@
-function doubleClick (state = {double_counter: 0}, action) {
+export default function doubleClick(state = 0, action) {
     switch (action.type) {
         case 'DOUBLE_INCREMENT':
-            return {double_counter: state.double_counter + 2};
+            return state + 2;
         case  'DOUBLE_DECREMENT':
-            return {double_counter: state.double_counter - 2};
+            return state - 2 >= 0 ? state - 2 : 0;
         default:
             return state
     }
-};
-
-export default doubleClick
+}

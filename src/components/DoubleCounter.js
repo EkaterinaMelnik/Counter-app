@@ -17,7 +17,7 @@ const DoubleCounter = ({double_clicked, onDoubleIncrement, onDoubleDecrement}) =
 };
 
 const mapStateToProps = state => ({
-    double_clicked: state.doubleClick.double_counter
+    double_clicked: state.doubleClick
 });
 
 const mapDispatchToProps = dispatch => ({
