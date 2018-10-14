@@ -1,9 +1,9 @@
-const doubleClick = (state = 0, action) => {
+function doubleClick (state = {double_counter: 0}, action) {
     switch (action.type) {
-        case 'INCREMENT_DOUBLE':
-            return state + 2;
-        case  'DECREMENT_DOUBLE':
-            return state - 2;
+        case 'DOUBLE_INCREMENT':
+            return {double_counter: state.double_counter + 2};
+        case  'DOUBLE_DECREMENT':
+            return {double_counter: state.double_counter - 2};
         default:
             return state
     }

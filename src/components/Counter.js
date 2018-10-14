@@ -2,10 +2,10 @@ import React from 'react';
 import {doIncrement, doDecrement} from "../actions/Action";
 import {connect} from 'react-redux';
 
-const Counter = ({value, onIncrement, onDecrement}) => {
+const Counter = ({clicked, onIncrement, onDecrement}) => {
     return (
         <div>
-            <p>Value: {value}</p>
+            <p>Clicked: {clicked}</p>
             <button onClick={onIncrement}>
                 +
             </button>
@@ -16,15 +16,13 @@ const Counter = ({value, onIncrement, onDecrement}) => {
     )
 };
 
-const mapStateToProps = state => {
-    return {value: state}
-};
+const mapStateToProps = state => ({
+     clicked: state.counter
+});
 
-const mapDispatchToProps = dispatch => {
-    return {
+const mapDispatchToProps = dispatch => ({
         onIncrement: () => dispatch(doIncrement),
         onDecrement: () => dispatch(doDecrement)
-    }
-};
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
