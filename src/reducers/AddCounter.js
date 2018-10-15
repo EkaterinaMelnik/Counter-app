@@ -1,7 +1,7 @@
-export default function addNewCounter(state = [0], action){
+export default function addNewCounter(state = [], action){
     switch (action.type) {
         case 'ADD_COUNTER':
-            return state.slice().push('1');
+            return [...state, 0];
         default:
             return state;
     }
