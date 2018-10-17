@@ -1,9 +1,21 @@
-export default function click(state = 0, action) {
+export default function click(state = [0], action) {
     switch (action.type) {
         case 'INCREMENT':
-            return state + 1;
+            return state.map((counter, index) => {
+                if(action.id === index){
+                    return counter++;
+                }
+                return counter;
+            });
         case 'DECREMENT':
-            return state - 1 >= 0 ? state - 1 : 0;
+            return state.map((counter, index) => {
+                if(action.id === index){
+                    return counter--;
+                }
+                return counter;
+            });
+        case 'ADD_COUNTER':
+            return [...state, 0];
         default:
             return state;
     }

@@ -1,5 +1,5 @@
-import React from 'react';
-import {doIncrement, doDecrement} from "../actions/Action";
+import React, {PropTypes} from 'react';
+import {doDecrement, doIncrement} from "../actions/Action";
 import {connect} from 'react-redux';
 
 const Counter = ({clicked, onIncrement, onDecrement}) => {
@@ -16,13 +16,14 @@ const Counter = ({clicked, onIncrement, onDecrement}) => {
     )
 };
 
-const mapStateToProps = state => ({
-    clicked: state.click
-});
 
-const mapDispatchToProps = dispatch => ({
-    onIncrement: () => dispatch(doIncrement),
-    onDecrement: () => dispatch(doDecrement)
-});
+// const mapStateToProps = state => ({
+//     counters: state.click
+// });
+//
+// const mapDispatchToProps = dispatch => ({
+//     onIncrement: id => dispatch(doIncrement(id)),
+//     onDecrement: id => dispatch(doDecrement(id))
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default Counter

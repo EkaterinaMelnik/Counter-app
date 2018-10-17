@@ -9,9 +9,9 @@ const AddCounter = ({addNewCounter, counterArr}) => (
 );
 
 const mapStateToProps = state => {
-    console.log('state: ' + state.addNewCounter);
+    console.log('state: ' + state.click);
     return {
-        counterArr: state.addNewCounter
+        counterArr: state.click
     }
 };
 

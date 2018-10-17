@@ -1,6 +1,16 @@
-export const doIncrement = {type: 'INCREMENT'};
+export function doIncrement(id) {
+    return {
+        type: 'INCREMENT',
+        id
+    }
+}
 
-export const doDecrement = {type: 'DECREMENT'};
+export function doDecrement(id) {
+    return {
+        type: 'DECREMENT',
+        id
+    }
+}
 
 export const doDoubleIncrement = {type: 'DOUBLE_INCREMENT'};
 
