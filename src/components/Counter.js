@@ -1,6 +1,5 @@
-import React, {PropTypes} from 'react';
-import {doDecrement, doIncrement} from "../actions/Action";
-import {connect} from 'react-redux';
+import React from 'react';
+import PropTypes from 'prop-types'
 
 const Counter = ({clicked, onIncrement, onDecrement}) => {
     return (
@@ -16,14 +15,10 @@ const Counter = ({clicked, onIncrement, onDecrement}) => {
     )
 };
 
-
-// const mapStateToProps = state => ({
-//     counters: state.click
-// });
-//
-// const mapDispatchToProps = dispatch => ({
-//     onIncrement: id => dispatch(doIncrement(id)),
-//     onDecrement: id => dispatch(doDecrement(id))
-// });
+Counter.propTypes = {
+    clicked: PropTypes.number.isRequired,
+    onIncrement: PropTypes.func.isRequired,
+    onDecrement: PropTypes.func.isRequired
+};
 
 export default Counter

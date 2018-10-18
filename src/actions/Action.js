@@ -12,8 +12,9 @@ export function doDecrement(id) {
     }
 }
 
-export const doDoubleIncrement = {type: 'DOUBLE_INCREMENT'};
-
-export const doDoubleDecrement = {type: 'DOUBLE_DECREMENT'};
-
-export const addCounter = {type: 'ADD_COUNTER'};
+export function addCounter() {
+    return {
+        type: 'ADD_COUNTER'
+    }
+}
+// export const addCounter = {type: 'ADD_COUNTER'};

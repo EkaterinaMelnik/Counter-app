@@ -4,21 +4,16 @@ import {connect} from 'react-redux';
 
 const AddCounter = ({addNewCounter, counterArr}) => (
     <button onClick={addNewCounter}>
-        Add new counter {counterArr.length}
+        Add new counter ({counterArr.length})
     </button>
 );
 
-const mapStateToProps = state => {
-    console.log('state: ' + state.click);
-    return {
+const mapStateToProps = state => ({
         counterArr: state.click
-    }
-};
+});
 
 const mapDispatchToProps = dispatch => ({
-    addNewCounter: () => {
-        dispatch(addCounter)
-    }
+    addNewCounter: () => dispatch(addCounter())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCounter)
