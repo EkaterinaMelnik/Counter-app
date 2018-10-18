@@ -10,7 +10,7 @@ export default function click(state = [0], action) {
         case 'DECREMENT':
             return state.map((counter, index) => {
                 if (action.id === index) {
-                    return counter - 1;
+                    return counter - 1 >= 0 ? counter - 1 : counter;
                 }
                 return counter;
             });
