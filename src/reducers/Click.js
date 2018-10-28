@@ -16,6 +16,8 @@ export default function click(state = [0], action) {
             });
         case 'ADD_COUNTER':
             return [...state, 0];
+        case 'DELETE_COUNTER':
+            return state.slice(0, state.length - 1);
         default:
             return state;
     }

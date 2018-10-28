@@ -17,4 +17,7 @@ export function addCounter() {
         type: 'ADD_COUNTER'
     }
 }
-// export const addCounter = {type: 'ADD_COUNTER'};
+
+export const deleteCounter = () => ({
+   type: 'DELETE_COUNTER'
+});
