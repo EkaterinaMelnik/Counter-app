@@ -12,6 +12,20 @@ export function doDecrement(id) {
     }
 }
 
+export function doIncrementAsync(id) {
+    return {
+        type: 'INCREMENT_ASYNC',
+        id
+    }
+}
+
+export function doDecrementAsync(id) {
+    return {
+        type: 'DECREMENT_ASYNC',
+        id
+    }
+}
+
 export function addCounter() {
     return {
         type: 'ADD_COUNTER'
