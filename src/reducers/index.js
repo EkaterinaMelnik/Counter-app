@@ -1,6 +1,8 @@
 import  {combineReducers} from 'redux';
-import click from './Click';
+import click from './click';
+import getData from './getData';
 
 export default combineReducers({
-    click
+    click,
+    getData
 });
