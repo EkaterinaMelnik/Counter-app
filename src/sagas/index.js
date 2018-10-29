@@ -1,16 +1,27 @@
-import {put, takeEvery, call} from 'redux-saga/effects';
+import {put, takeEvery, call, all} from 'redux-saga/effects';
 import {delay} from 'redux-saga';
 
-export function* incrementAsync(action) {
+function* incrementAsync(action) {
     yield call(delay, 1500);
     yield put({type: 'INCREMENT', id: action.id})
 }
 
-export function* decrementAsync(action) {
+function* decrementAsync(action) {
     yield call(delay, 1500);
     yield put({type: 'DECREMENT', id: action.id});
 }
-export default function* rootSaga() {
+
+function* watchIncrementAsync() {
     yield takeEvery('INCREMENT_ASYNC', incrementAsync);
+}
+
+function* watchDecrementAsync() {
     yield takeEvery('DECREMENT_ASYNC', decrementAsync);
+}
+
+export default function* rootSaga() {
+    yield all([
+        watchIncrementAsync(),
+        watchDecrementAsync()
+    ]);
 }
