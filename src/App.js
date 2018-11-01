@@ -3,7 +3,6 @@ import AddCounter from './components/AddCounter.js';
 import CountersList from "./containers/CountersList";
 import './App.css';
 import DeleteCounter from "./components/DeleteCounter";
-import FetchButton from "./containers/FetchButton";
 
 const App = () => (
     <div className="App">
@@ -11,7 +10,6 @@ const App = () => (
         <hr/>
         <AddCounter/>
         <DeleteCounter/>
-        <FetchButton/>
     </div>
 );
 
